@@ -27,7 +27,6 @@ export class GetOneByIdProyectoRepository implements IProyectoGetOneById {
     try {
       this.pool = await sql.connect(config);
 
-      console.log('✅ Conectado a SQL Server (Windows Auth)');
     } catch (err) {
       console.error('❌ Error de conexión:', err);
       throw err;
@@ -35,16 +34,12 @@ export class GetOneByIdProyectoRepository implements IProyectoGetOneById {
   }
 
   async getOneById(idProyecto: string): Promise<EGetOneByIdProyecto | null> {
-    console.log('>> Ejecutando query con id:', idProyecto);
-console.log('ID como string:', idProyecto, 'Tipo:', typeof idProyecto);
 
   const result = await this.pool.request()
       .input('idProyecto', sql.VarChar(60), idProyecto)
       .query(`SELECT idProyecto, nombre, descripcion, activo FROM proyecto WHERE idProyecto = @idProyecto`);
-    console.log(idProyecto)
 
     if (result.recordset.length === 0) return null;
-    console.log(idProyecto)
 
     const row = result.recordset[0];
 

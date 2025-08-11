@@ -25,7 +25,6 @@ export class SqlServerUserRepository implements UserRepository {
     try {
       this.pool = await sql.connect(config); // ← NO uses new ConnectionPool()
 
-      console.log('✅ Conectado a SQL Server (Windows Auth)');
     } catch (err) {
       console.error('❌ Error de conexión:', err);
       throw err;
@@ -33,8 +32,6 @@ export class SqlServerUserRepository implements UserRepository {
   }
 
   async create(user: User): Promise<void> {
-      console.log('✅ LLEGO ACAQASFSAFSA a SQL Server');
-      console.log(user);
 
     await this.pool.request()
       .input('id', sql.NVarChar, user.id.value)

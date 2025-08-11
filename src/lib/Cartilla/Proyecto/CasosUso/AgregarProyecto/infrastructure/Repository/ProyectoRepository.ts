@@ -46,8 +46,6 @@ export class SqlServerProyectoRepository implements IAgregarProyectoRepository {
         trustedConnection: true
       }
     };
-      console.log('✅ LLEGO ACAQASFSAFSA a SQL Server');
-      console.log(proyecto);
       this.pool = await sql.connect(config);
 
     await this.pool.request()

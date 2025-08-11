@@ -44,10 +44,17 @@ export class Proyecto {
   }
   public mapToPrimitivies(){
     return {
-           idProyecto       : this.idProyecto.value
-          ,nombre           : this.nombre.value
-          ,descripcion      : this.descripcion.value
-          ,activo           : this.activo.value  
+           idProyecto         : this.idProyecto.value
+          ,nombre             : this.nombre.value
+          ,descripcion        : this.descripcion.value
+          ,activo             : this.activo.value  
+          ,fechaCreacion      : this.fechaCreacion      
+          ,usuarioCreacion    : this.usuarioCreacion    
+          ,fechaModificacion  : this.fechaModificacion  
+          ,usuarioModificacion: this.usuarioModificacion
+          ,ipV4               : this.ipV4               
+          ,ipv6               : this.ipv6               
+          ,direccionMac       : this.direccionMac     
         }
   };
 }

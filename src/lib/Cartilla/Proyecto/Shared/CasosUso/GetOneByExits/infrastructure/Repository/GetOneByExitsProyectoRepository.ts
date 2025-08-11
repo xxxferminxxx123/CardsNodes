@@ -21,10 +21,7 @@ export class GetOneByExitsProyectoRepository implements IProyectoGetOneByExits {
 
     try {
       this.pool = await sql.connect(config);
-
-      console.log('✅ Conectado a SQL Server (Windows Auth)');
     } catch (err) {
-      console.error('❌ Error de conexión:', err);
       throw err;
     }
   }
@@ -39,7 +36,6 @@ export class GetOneByExitsProyectoRepository implements IProyectoGetOneByExits {
     `);
 
   const existe = result.recordset[0]?.Existe === 1;
-      console.log(existe)
   if (!existe) {
     // No existe el proyecto
     return 1;

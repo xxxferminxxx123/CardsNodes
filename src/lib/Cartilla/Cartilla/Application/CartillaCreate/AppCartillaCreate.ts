@@ -1,4 +1,3 @@
-import { Cartilla } from "../../Domain/Cartilla";
 import { CartillaCreate } from "../../Domain/CartillaCreate";
 import { ICartillaRepository } from "../../Domain/Repository/ICartillaRepository";
 import { Activo } from "../../Domain/ValueObjects/Activo";

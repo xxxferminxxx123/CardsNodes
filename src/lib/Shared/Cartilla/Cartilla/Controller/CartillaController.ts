@@ -3,7 +3,24 @@ import { NextFunction, Request, Response } from "express";
 export class CartillaController {
 
   constructor(private readonly services: any) {} 
-  
+
+  async build(req: Request, res: Response, next: NextFunction) {
+   try {
+      const 
+      { 
+          idCartilla 
+      } = req.body;
+      
+      await this.services.build.run(        
+          idCartilla         
+      );
+      res.status(201).json({ message: "Cartilla construida correctamente" });
+
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async create(req: Request, res: Response, next: NextFunction) {
     try {
 

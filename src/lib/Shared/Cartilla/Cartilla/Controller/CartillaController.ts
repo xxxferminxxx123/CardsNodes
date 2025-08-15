@@ -5,15 +5,11 @@ export class CartillaController {
   constructor(private readonly services: any) {} 
 
   async build(req: Request, res: Response, next: NextFunction) {
-   try {
-      const 
-      { 
-          idCartilla 
-      } = req.body;
+    
+    try {
       
-      await this.services.build.run(        
-          idCartilla         
-      );
+    await this.services.build.run(req.params.idCartilla);
+
       res.status(201).json({ message: "Cartilla construida correctamente" });
 
     } catch (error) {

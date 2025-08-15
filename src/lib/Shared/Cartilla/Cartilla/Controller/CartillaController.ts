@@ -2,7 +2,20 @@ import { NextFunction, Request, Response } from "express";
 
 export class CartillaController {
 
-  constructor(private readonly services: any) {} 
+  constructor(private readonly services: any) {}
+  
+    async addColumnTable(req: Request, res: Response, next: NextFunction) {
+    
+    try {
+      
+    await this.services.addColumnTable.addColumnTable(req.params.idCartilla);
+
+      res.status(201).json({ message: "Columna agregada." });
+
+    } catch (error) {
+      next(error);
+    }
+  }
 
   async build(req: Request, res: Response, next: NextFunction) {
     

@@ -10,6 +10,7 @@ export const CartillaRouter = (services: CartillaServices) => {
 
   router.post("/", controller.create.bind(controller));
   router.post("/build/:idCartilla", controller.build.bind(controller));
+  router.post("/addColumnTable/:idCartilla", controller.addColumnTable.bind(controller));
 
   return router;
 

@@ -5,5 +5,5 @@ export type CartillaServices = {
 
     create: AppCartillaCreate;
     build: AppCartillaBuild;
-    
+    addColumnTable: AppCartillaBuild;
 };

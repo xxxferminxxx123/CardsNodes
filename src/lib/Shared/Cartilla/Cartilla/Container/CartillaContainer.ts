@@ -11,6 +11,7 @@ export const CartillaContainer = async (): Promise<{ cartilla: CartillaServices 
     cartilla: {
        create: new AppCartillaCreate(cartillaRepository)
       ,build: new AppCartillaBuild(cartillaRepository)
+      ,addColumnTable: new AppCartillaBuild(cartillaRepository)
     },
   };
 };

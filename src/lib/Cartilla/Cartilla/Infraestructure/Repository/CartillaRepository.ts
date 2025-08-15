@@ -5,6 +5,18 @@ import sql from 'mssql/msnodesqlv8';
 
 export class CartillaRepository implements ICartillaRepository {
 
+  async addColumnTable(idCartilla: string): Promise<void> {
+
+    await SQLServerConnection.connect();
+
+    const request = SQLServerConnection.getRequest();
+
+    await request
+      .input('ID_CARTILLA', sql.VarChar, idCartilla)
+      .execute('PRY_API_CARTILLA_AGREGAR_COLUMNA_NUEVA');  
+
+  }
+
   async build(idCartilla: string): Promise<void> {
 
     await SQLServerConnection.connect();

@@ -5,7 +5,9 @@ export interface ICartillaRepository {
 
   create(cartilla: CartillaCreate): Promise<void>;
 
-  build(cartilla: string): Promise<void>;
+  build(idCartilla: string): Promise<void>;
+
+  addColumnTable(idCartilla: string): Promise<void>;
 
   // getAll(): Promise<Cartilla[]>;
 

@@ -6,7 +6,7 @@ import { EEditarProyecto } from '../../domain/Entity/EEditarProyecto';
 dotenv.config();
 
 export class SqlServerProyectoRepository implements IEditarProyectoRepository {
-    
+
   private pool!: sql.ConnectionPool;
 
   async init(): Promise<void> {
@@ -30,15 +30,15 @@ export class SqlServerProyectoRepository implements IEditarProyectoRepository {
   }
 
   async dispose(): Promise<void> {
-  if (this.pool) {
-    await this.pool.close();
-    console.log('✅ Pool cerrado desde dispose()');
+    if (this.pool) {
+      await this.pool.close();
+      console.log('✅ Pool cerrado desde dispose()');
+    }
   }
-}
 
 
   async edit(proyecto: EEditarProyecto): Promise<void> {
-        const config: sql.config = {
+    const config: sql.config = {
       server: 'LAPTOP-M1115GRH\\SQLEXPRESS',
       database: 'BDDEV_PROYECTO',
       driver: 'msnodesqlv8',
@@ -46,8 +46,8 @@ export class SqlServerProyectoRepository implements IEditarProyectoRepository {
         trustedConnection: true
       }
     };
-      console.log(proyecto);
-      this.pool = await sql.connect(config);
+    console.log(proyecto);
+    this.pool = await sql.connect(config);
 
     await this.pool.request()
       .input('idProyecto', sql.NVarChar, proyecto.idProyecto.value)
@@ -56,15 +56,11 @@ export class SqlServerProyectoRepository implements IEditarProyectoRepository {
       .input('activo', sql.Bit, proyecto.activo.value)
       .query(`
         UPDATE proyecto 
-
         SET   descripcion = @descripcion
             , nombre      = @nombre
             , activo      = @activo
-
         WHERE idProyecto = @idProyecto`);
-
-
   }
-  
+
 
 }

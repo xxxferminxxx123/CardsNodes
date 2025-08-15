@@ -36,11 +36,10 @@ export class GetOneByExitsProyectoRepository implements IProyectoGetOneByExits {
     `);
 
   const existe = result.recordset[0]?.Existe === 1;
+  
   if (!existe) {
-    // No existe el proyecto
     return 1;
   } else {
-    // Sí existe el proyecto
     return 0;
   }
 }

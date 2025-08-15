@@ -56,8 +56,6 @@ export class SqlServerProyectoRepository implements IAgregarProyectoRepository {
       .query(`
         INSERT INTO proyecto (idProyecto, descripcion, nombre, activo)
         VALUES (@idProyecto, @descripcion, @nombre, @activo)`);
-            await this.pool.close();
-
   }
   
 

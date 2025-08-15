@@ -1,12 +1,7 @@
 import * as dotenv from 'dotenv';
 import sql from 'mssql/msnodesqlv8';
 import { IProyectoGetOneById } from '../../domain/Repository/IProyectoGetOneById';
-import { ProyectoId } from '.././../../../../Entity/ValueObejts/ProyectoId';
 import { EGetOneByIdProyecto } from '../../domain/Entity/EGetOneByIdProyecto';
-import { ProyectoNombre } from '.././../../../../Entity/ValueObejts/ProyectoNombre';
-import { ProyectoDescripcion } from '.././../../../../Entity/ValueObejts/ProyectoDescripcion';
-import { ProyectoActivo } from '.././../../../../Entity/ValueObejts/ProyectoActivo';
-//'src/lib/Cartilla/Proyecto/Entity/ValueObejts/ProyectoActivo';
 
 dotenv.config();
 

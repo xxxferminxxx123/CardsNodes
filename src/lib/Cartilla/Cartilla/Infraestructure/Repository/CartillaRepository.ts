@@ -20,8 +20,6 @@ export class CartillaRepository implements ICartillaRepository {
       .input('activo'             , sql.Bit, cartilla.activo.value)
       .input('fechaCreacion'      , sql.VarChar, cartilla.fechaCreacion)
       .input('usuarioCreacion'    , sql.VarChar, cartilla.usuarioCreacion)
-      .input('fechaModificacion'  , sql.VarChar, cartilla.fechaModificacion)
-      .input('usuarioModificacion', sql.VarChar, cartilla.usuarioModificacion)
       .input('ipv4'               , sql.VarChar, cartilla.ipv4)
       .input('ipv6'               , sql.VarChar, cartilla.ipv6)
       .input('direccionMac'       , sql.VarChar, cartilla.direccionMac);
@@ -36,8 +34,6 @@ export class CartillaRepository implements ICartillaRepository {
         ,ACTIVO 
         ,FECHA_CREACION
         ,USUARIO_CREACION
-        ,FECHA_MODIFICACION
-        ,USUARIO_MODIFICACION
         ,IPV4
         ,IPV6
         ,DIRECCION_MAC
@@ -51,8 +47,6 @@ export class CartillaRepository implements ICartillaRepository {
         @activo,
         @fechaCreacion,
         @usuarioCreacion,
-        @fechaModificacion,
-        @usuarioModificacion,
         @ipv4,
         @ipv6,
         @direccionMac

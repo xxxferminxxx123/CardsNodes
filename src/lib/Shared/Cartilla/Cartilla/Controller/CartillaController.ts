@@ -17,8 +17,6 @@ export class CartillaController {
           ,activo      
           ,fechaCreacion      
           ,usuarioCreacion    
-          ,fechaModificacion  
-          ,usuarioModificacion
           ,ipv4               
           ,ipv6               
           ,direccionMac       
@@ -35,8 +33,6 @@ export class CartillaController {
           ,activo             
           ,fechaCreacion      
           ,usuarioCreacion    
-          ,fechaModificacion  
-          ,usuarioModificacion
           ,ipv4               
           ,ipv6               
           ,direccionMac    

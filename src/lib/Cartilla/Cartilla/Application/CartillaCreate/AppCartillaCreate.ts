@@ -1,4 +1,5 @@
 import { Cartilla } from "../../Domain/Cartilla";
+import { CartillaCreate } from "../../Domain/CartillaCreate";
 import { ICartillaRepository } from "../../Domain/Repository/ICartillaRepository";
 import { Activo } from "../../Domain/ValueObjects/Activo";
 import { IdCartilla } from "../../Domain/ValueObjects/IdCartilla";
@@ -19,15 +20,13 @@ export class AppCartillaCreate {
             ,activo             : boolean
             ,fechaCreacion      : string
             ,usuarioCreacion    : string
-            ,fechaModificacion  : string
-            ,usuarioModificacion: string
             ,ipv4               : string
             ,ipv6               : string
             ,direccionMac       : string
 
   ): Promise<void> {
 
-    const cartilla = new Cartilla(
+    const cartilla = new CartillaCreate(
 
          new IdCartilla(idCartilla)
         ,new NombreCartilla(nombreCartilla)
@@ -37,8 +36,6 @@ export class AppCartillaCreate {
         ,new Activo(activo)                 
         ,fechaCreacion
         ,usuarioCreacion
-        ,fechaModificacion
-        ,usuarioModificacion
         ,ipv4
         ,ipv6
         ,direccionMac

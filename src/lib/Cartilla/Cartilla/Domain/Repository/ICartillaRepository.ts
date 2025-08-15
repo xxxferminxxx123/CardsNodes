@@ -1,8 +1,9 @@
 import { Cartilla } from "../Cartilla";
+import { CartillaCreate } from "../CartillaCreate";
 
 export interface ICartillaRepository {
 
-  create(cartilla: Cartilla): Promise<void>;
+  create(cartilla: CartillaCreate): Promise<void>;
 
   // getAll(): Promise<Cartilla[]>;
 

@@ -16,7 +16,7 @@ export class CartillaRepository implements ICartillaRepository {
       .input('nombreCartilla'     , sql.VarChar, cartilla.nombreCartilla.value)
       .input('nombreColumna'      , sql.VarChar, cartilla.nombreColumna.value)
       .input('tipoDato'           , sql.VarChar, cartilla.tipoDato.value)
-      .input('longitudColumna'    , sql.VarChar, cartilla.longitudColumna.value.trim)
+      .input('longitudColumna'    , sql.VarChar, cartilla.longitudColumna.value)
       .input('activo'             , sql.Bit, cartilla.activo.value)
       .input('fechaCreacion'      , sql.VarChar, cartilla.fechaCreacion)
       .input('usuarioCreacion'    , sql.VarChar, cartilla.usuarioCreacion)

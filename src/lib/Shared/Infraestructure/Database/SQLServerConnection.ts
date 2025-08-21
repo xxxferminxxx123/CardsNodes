@@ -14,7 +14,7 @@ export class SQLServerConnection {
     options: { trustedConnection: true }
   };
 
-  /** Conecta si aún no está conectado */
+  /** Si la conexion no esta intenta conectar denuevo*/
   static async connect(): Promise<void> {
     if (!SQLServerConnection.pool) {
       SQLServerConnection.pool = await new sql.ConnectionPool(SQLServerConnection.config).connect();

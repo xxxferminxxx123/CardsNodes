@@ -8,7 +8,7 @@ export class CartillaController {
     
     try {
       
-    await this.services.addColumnTable.addColumnTable(req.params.idCartilla);
+      await this.services.addColumnTable.addColumnTable(req.params.idCartilla);
 
       res.status(201).json({ message: "Columna agregada." });
 
@@ -21,7 +21,7 @@ export class CartillaController {
     
     try {
       
-    await this.services.build.run(req.params.idCartilla);
+      await this.services.build.run(req.params.idCartilla);
 
       res.status(201).json({ message: "Cartilla construida correctamente" });
 
@@ -47,7 +47,7 @@ export class CartillaController {
           ,ipv6               
           ,direccionMac       
 
-    } = req.body;
+      } = req.body;
 
       await this.services.create.run(
         

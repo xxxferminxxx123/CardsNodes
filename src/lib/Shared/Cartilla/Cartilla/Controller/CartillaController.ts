@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { CreateCartillaParams } from "./Dto/CreateCartilla/DtoCreateCartilla";
 
 export class CartillaController {
 
@@ -21,35 +22,9 @@ export class CartillaController {
     try {
 
       const 
-      { 
-          idCartilla         
-          ,nombreCartilla     
-          ,columnaCartilla    
-          ,tipoDato
-          ,longitudColumna
-          ,activo      
-          ,fechaCreacion      
-          ,usuarioCreacion    
-          ,ipv4               
-          ,ipv6               
-          ,direccionMac       
+      { CreateCartillaParams } = req.body;
 
-    } = req.body;
-
-      await this.services.create.run(
-        
-          idCartilla         
-          ,nombreCartilla     
-          ,columnaCartilla    
-          ,tipoDato
-          ,longitudColumna
-          ,activo             
-          ,fechaCreacion      
-          ,usuarioCreacion    
-          ,ipv4               
-          ,ipv6               
-          ,direccionMac    
-        );
+      await this.services.create.run(CreateCartillaParams);
 
       res.status(201).json({ message: "Cartilla creada correctamente" });
 

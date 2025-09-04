@@ -2,7 +2,6 @@ import express, { Request, Response, NextFunction } from "express";
 import { CartillaContainer } from "./lib/Shared/Cartilla/Cartilla/Container/CartillaContainer";
 import { CartillaRouter } from "./lib/Shared/Cartilla/Cartilla/Router/CartillaRouter";
 import { PostsRouter } from "./lib/Cartilla/Posts/PostsRouter";
-import jwt from "jsonwebtoken";
 
 (async () => {
 
@@ -22,6 +21,7 @@ import jwt from "jsonwebtoken";
   
   app.use("/posts", PostsRouter());
   app.use("/cartilla", CartillaRouter(serviceCartilla.cartilla));
+
   app.post("/login", (req,res)=>{
     const username= req.body.username;
     const password= req.body.password;
@@ -29,10 +29,11 @@ import jwt from "jsonwebtoken";
       username: username
       ,password: password
     }
-    if()
-    const accesToken = jwt.sign(user,JWT)
-
-    res.json({accesToken:accesToken})
+    console.log(user.username)
+    console.log(user.password)
+    if(req.body.username==""){
+      res.status(400).json({ message: "No hay credenciales." });
+    }
     })
 
   app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
